@@ -30,8 +30,21 @@ Public Class Form1
         ' Cargar los datos en la tabla
         CargarTabla()
 
+        CargarSegundaTabla()
+
         ''llenado de espacio de API
         FillApiTap()
+
+        ''llenar el combobox
+        Dim CitiesController As New CitiesController()
+        States_comboBox.DataSource = CitiesController.listarStados(New DbConection)
+
+    End Sub
+
+    Private Sub CargarSegundaTabla()
+        ''cargar tabla de ciudades
+        Dim CitiesController As New CitiesController()
+        DataGridView2.DataSource = CitiesController.LLenadoDeTablaCiudades(New DbConection)
 
     End Sub
 
@@ -274,6 +287,25 @@ Public Class Form1
     End Sub
 
     Private Sub TabPage4_Click(sender As Object, e As EventArgs) Handles TabPage4.Click
+
+    End Sub
+
+    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim splitArray As String() = States_comboBox.Text.Split({"."}, StringSplitOptions.None)
+        Dim Citi As New CIty()
+        Dim CityController As New CitiesController()
+
+        Citi.State_id = splitArray(0)
+        Citi.Name = NombreCiudad_input.Text
+
+        CityController.AgregarRegistro(citi:=Citi, conexion:=New DbConection)
+
+        CargarSegundaTabla()
+
 
     End Sub
 End Class

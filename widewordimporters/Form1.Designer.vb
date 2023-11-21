@@ -62,15 +62,22 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Ataques_label = New System.Windows.Forms.Label()
         Me.Tipos_label = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PokeName_label = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.PicturePokemon1 = New System.Windows.Forms.PictureBox()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WideWorldImportersDataSet = New widewordimporters.WideWorldImportersDataSet()
         Me.CustomersTableAdapter = New widewordimporters.WideWorldImportersDataSetTableAdapters.CustomersTableAdapter()
-        Me.Ataques_label = New System.Windows.Forms.Label()
+        Me.NombreCiudad_input = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.States_comboBox = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +88,8 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PicturePokemon1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WideWorldImportersDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,7 +100,8 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 50)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 39)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1741, 847)
@@ -464,6 +474,14 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Ataques"
         '
+        'Ataques_label
+        '
+        Me.Ataques_label.AutoSize = True
+        Me.Ataques_label.Location = New System.Drawing.Point(20, 44)
+        Me.Ataques_label.Name = "Ataques_label"
+        Me.Ataques_label.Size = New System.Drawing.Size(0, 25)
+        Me.Ataques_label.TabIndex = 0
+        '
         'Tipos_label
         '
         Me.Tipos_label.AutoSize = True
@@ -508,6 +526,50 @@ Partial Class Form1
         Me.PicturePokemon1.TabIndex = 0
         Me.PicturePokemon1.TabStop = False
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.States_comboBox)
+        Me.TabPage5.Controls.Add(Me.Label20)
+        Me.TabPage5.Controls.Add(Me.NombreCiudad_input)
+        Me.TabPage5.Controls.Add(Me.Label18)
+        Me.TabPage5.Controls.Add(Me.Button4)
+        Me.TabPage5.Controls.Add(Me.DataGridView2)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(1733, 810)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "TabPage5"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(797, 60)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(171, 25)
+        Me.Label18.TabIndex = 2
+        Me.Label18.Text = "Nombre de ciudad"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(802, 306)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(181, 61)
+        Me.Button4.TabIndex = 1
+        Me.Button4.Text = "Agregar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(31, 60)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 72
+        Me.DataGridView2.RowTemplate.Height = 31
+        Me.DataGridView2.Size = New System.Drawing.Size(726, 707)
+        Me.DataGridView2.TabIndex = 0
+        '
         'CustomersBindingSource
         '
         Me.CustomersBindingSource.DataMember = "Customers"
@@ -522,13 +584,29 @@ Partial Class Form1
         '
         Me.CustomersTableAdapter.ClearBeforeFill = True
         '
-        'Ataques_label
+        'NombreCiudad_input
         '
-        Me.Ataques_label.AutoSize = True
-        Me.Ataques_label.Location = New System.Drawing.Point(20, 44)
-        Me.Ataques_label.Name = "Ataques_label"
-        Me.Ataques_label.Size = New System.Drawing.Size(0, 25)
-        Me.Ataques_label.TabIndex = 0
+        Me.NombreCiudad_input.Location = New System.Drawing.Point(802, 103)
+        Me.NombreCiudad_input.Name = "NombreCiudad_input"
+        Me.NombreCiudad_input.Size = New System.Drawing.Size(239, 29)
+        Me.NombreCiudad_input.TabIndex = 3
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(812, 170)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(73, 25)
+        Me.Label20.TabIndex = 4
+        Me.Label20.Text = "Estado"
+        '
+        'States_comboBox
+        '
+        Me.States_comboBox.FormattingEnabled = True
+        Me.States_comboBox.Location = New System.Drawing.Point(802, 223)
+        Me.States_comboBox.Name = "States_comboBox"
+        Me.States_comboBox.Size = New System.Drawing.Size(215, 32)
+        Me.States_comboBox.TabIndex = 5
         '
         'Form1
         '
@@ -554,6 +632,9 @@ Partial Class Form1
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.PicturePokemon1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WideWorldImportersDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -608,4 +689,11 @@ Partial Class Form1
     Friend WithEvents Label19 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Ataques_label As Label
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents States_comboBox As ComboBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents NombreCiudad_input As TextBox
 End Class
